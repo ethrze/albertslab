@@ -13,6 +13,8 @@
 		AD4B088E1B7A540C009902CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4B088D1B7A540C009902CF /* Images.xcassets */; };
 		AD4B08911B7A540C009902CF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4B088F1B7A540C009902CF /* LaunchScreen.xib */; };
 		AD4B089D1B7A540C009902CF /* protoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B089C1B7A540C009902CF /* protoTests.swift */; };
+		AD4B08A71B7D8745009902CF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B08A61B7D8745009902CF /* CoreBluetooth.framework */; };
+		AD4B08A91B7D874D009902CF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B08A81B7D874D009902CF /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		AD4B08961B7A540C009902CF /* protoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = protoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4B089B1B7A540C009902CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4B089C1B7A540C009902CF /* protoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protoTests.swift; sourceTree = "<group>"; };
+		AD4B08A61B7D8745009902CF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		AD4B08A81B7D874D009902CF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4B08A91B7D874D009902CF /* CoreLocation.framework in Frameworks */,
+				AD4B08A71B7D8745009902CF /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 		AD4B08781B7A540C009902CF = {
 			isa = PBXGroup;
 			children = (
+				AD4B08A81B7D874D009902CF /* CoreLocation.framework */,
+				AD4B08A61B7D8745009902CF /* CoreBluetooth.framework */,
 				AD4B08831B7A540C009902CF /* proto */,
 				AD4B08991B7A540C009902CF /* protoTests */,
 				AD4B08821B7A540C009902CF /* Products */,
@@ -156,11 +164,13 @@
 		AD4B08791B7A540C009902CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = ccf;
 				TargetAttributes = {
 					AD4B08801B7A540C009902CF = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = YAT923QZWK;
 					};
 					AD4B08951B7A540C009902CF = {
 						CreatedOnToolsVersion = 6.4;
@@ -340,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = proto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = proto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +421,7 @@
 				AD4B08A21B7A540C009902CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD4B08A31B7A540C009902CF /* Build configuration list for PBXNativeTarget "protoTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +430,7 @@
 				AD4B08A51B7A540C009902CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
