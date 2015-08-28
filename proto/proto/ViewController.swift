@@ -13,8 +13,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    
+        // fresh
     override func viewDidLoad() {
+
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -23,10 +25,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         
+        /*
+        for (NSUUID *uuid in @[[[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"]]) {
+            CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:[uuid UUIDString]];
+            self.rangedRegions[region] = [NSArray array];
+        }
+        */
+        
         view.backgroundColor = UIColor.grayColor()
+
         
     }
     
+    // fresh
     func startScanning() {
         // create NSUUID w/ same ID as beacon
         let uuid = NSUUID(UUIDString:"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")
@@ -37,17 +48,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startRangingBeaconsInRegion(myBeaconRegion)
     }
     
+    /*
     func didChangeAuthorizationStatus() {
         // do stuff
         startScanning()
         
     }
+    */
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedAlways {
             if CLLocationManager.isMonitoringAvailableForClass(CLBeaconRegion.self) {
                 if CLLocationManager.isRangingAvailable() {
-                    // do stuff
+                    startScanning()
 
                 }
             }
@@ -95,7 +108,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         if beacons.count > 0 {
-            let beacon = beacons[0] //as! CLBeacon
+            let beacon = beacons[0] as! CLBeacon
             updateDistance(beacon.proximity)
             statusLabel.text = "Beacon Found!!"
             proxLabel.text = String(beacon.proximity)
